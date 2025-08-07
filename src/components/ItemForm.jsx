@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
 
-function ItemForm({ onAddItem }) {
+function ItemForm({ onItemFormSubmit }) {
   const [name, setName] = useState("");
   const [category, setCategory] = useState("Produce");
 
   function handleSubmit(event) {
     event.preventDefault();
     const newItem = { id: Date.now(), name, category };
-    if (typeof onAddItem === "function") {
-  onAddItem(newItem);
+    if (typeof onItemFormSubmit === "function") {
+  onItemFormSubmit(newItem);
 }
     setName("");
     setCategory("Produce");
